@@ -5,6 +5,9 @@ module.exports = {
     },
     songs: (_, __, { dataSources }) => {
       return dataSources.musicService.getSongs()
+    },
+    song: (_, { id }, { dataSources }) => {
+      return dataSources.musicService.getSong(id)
     }
   },
   Artist: {

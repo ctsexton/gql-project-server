@@ -26,6 +26,10 @@ class MusicService extends DataSource {
     return Promise.resolve(songs);
   }
 
+  getSong(id) {
+    return songs.find(song => song.id === id)
+  }
+
   getSongArtist(songId) {
     const artistId = songs.find(song => song.id === songId).artist;
     const artist = artists.find(artist => artist.id === artistId);

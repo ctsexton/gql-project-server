@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Query {
     artists: [Artist]!
     songs: [Song]!
+    song(id: String): Song!
   }
 
   type Artist {

@@ -49,6 +49,12 @@ class MusicService extends DataSource {
     return Promise.resolve(artist);
   }
 
+  addArtist(name) {
+    const id = name.toLowerCase().replace(" ", "-")
+    artists.push({ id: id, name: name });
+    return this.getArtist(id);
+  }
+
 };
 
 let artists = [

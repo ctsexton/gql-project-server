@@ -7,6 +7,19 @@ const typeDefs = gql`
     song(id: String): Song!
   }
 
+  type Mutation {
+    addArtist(input: AddArtistInput!): AddArtistPayload
+  }
+
+  input AddArtistInput {
+    name: String!
+  }
+
+  type AddArtistPayload {
+    id: ID!
+    name: String!
+  }
+
   type Artist {
     id: ID!
     name: String!

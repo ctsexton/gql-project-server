@@ -27,5 +27,10 @@ module.exports = {
     artist: (parent, _, { dataSources }) => {
       return dataSources.musicService.getCollaboratorArtist(parent.id)
     }
+  },
+  Mutation: {
+    addArtist: (_, { input }, { dataSources }) => {
+      return dataSources.musicService.addArtist(input.name)
+    }
   }
 }

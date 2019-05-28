@@ -8,7 +8,7 @@ class MusicService extends DataSource {
   initialize() {}
 
   getArtists() {
-    return Promise.resolve(artists);
+    return new Promise(res => setTimeout(() => res(artists), 1000));
   }
 
   getArtist(artistId) {
@@ -27,7 +27,8 @@ class MusicService extends DataSource {
   }
 
   getSong(id) {
-    return songs.find(song => song.id === id)
+    const song = songs.find(song => song.id === id);
+    return new Promise(res => setTimeout(() => res(song), 1000));
   }
 
   getSongArtist(songId) {
